@@ -159,303 +159,332 @@
                 class="shadow-md hover:shadow-xl hover:shadow-redd shadow-redd transition duration-100 w-24 h-24"><img
                     class="w-24 h-24" src="game/BATU.png" alt="BATU"></button>
         </div>
-        <!-- control pemain -->
-    </div>
-    <!--game bgk end-->
 
-    <footer id="footer" class="lg:mx-auto lg:w-96 mt-20 pb-6 bg-graan">
-        <div class=" mt-10 w-full justify-center px-8">
-            <div class="flex flex-wrap">
-                <h1 class=" font-IBM text-2xl font-semibold text-graan mx-auto">Hallo!, Saya <span
-                        class="underline underline-offset-2">AraZaynu</span></h1>
-
-                <p class="font-IBM mt-4 text-sm mx-auto text-premier tracking-tighter font-semibold">project dibuat
-                    sebagai
-                    Tugas Pembelajaran Javascript, yaitu saya membuat game Kertas-Gunting-Batu ini. dengan keterbatasan
-                    ilmu, saya
-                    terbuka
-                    atas kritik dan saran, terimakasih</p>
-                <p class="font-IBM text-sm mx-auto text-premier tracking-tighter font-semibold">@arazaynu</p>
-            </div>
+        <div class="mt-10 justify-center text-center ">
+            <button id="btn-backsound" onclick="backsound('BACKSOUND.mp3', true)"
+                class="bg-white shadow-lg border-2 hover:shadow-lg hover:shadow-graan transition duration-150 border-graan rounded-md w-48 text-center font-IBM tracking-tighter font-semibold">play</button>
+            <!-- control pemain -->
         </div>
-    </footer>
-    <script>
-        //variable - DOM
-        let pemain
-        let lawan
-        let hasil
-        let lawanI
+        <!--game bgk end-->
 
-        let pemainText = document.getElementById('pemain-text')
-        let lawanText = document.getElementById('lawan-text')
-        let hasilText = document.getElementById('hasil-text')
+        <footer id="footer" class="lg:mx-auto lg:w-96 mt-14 pb-6 bg-graan">
+            <div class=" mt-10 w-full justify-center px-8">
+                <div class="flex flex-wrap">
+                    <h1 class=" font-IBM text-2xl font-semibold text-graan mx-auto">Hallo!, Saya <span
+                            class="underline underline-offset-2">AraZaynu</span></h1>
 
-        let kertas = document.getElementById('btn-kertas')
-        let gunting = document.getElementById('btn-gunting')
-        let batu = document.getElementById('btn-batu')
+                    <p class="font-IBM mt-4 text-sm mx-auto text-premier tracking-tighter font-semibold">project dibuat
+                        sebagai
+                        Tugas Pembelajaran Javascript, yaitu saya membuat game Kertas-Gunting-Batu ini. dengan
+                        keterbatasan
+                        ilmu, saya
+                        terbuka
+                        atas kritik dan saran, terimakasih</p>
+                    <p class="font-IBM text-sm mx-auto text-premier tracking-tighter font-semibold">@arazaynu</p>
+                </div>
+            </div>
+        </footer>
+        <script>
+            //variable - DOM
+            let pemain
+            let lawan
+            let hasil
+            let lawanI
 
-        let pemainM = document.getElementById('pemain-main')
-        let lawanM = document.getElementById('lawan-main')
+            let pemainText = document.getElementById('pemain-text')
+            let lawanText = document.getElementById('lawan-text')
+            let hasilText = document.getElementById('hasil-text')
 
-        let ket1 = document.getElementById('ket-1')
-        let ket2 = document.getElementById('ket-2')
-        let line1 = document.getElementById('line-1')
-        let line2 = document.getElementById('line-2')
+            let kertas = document.getElementById('btn-kertas')
+            let gunting = document.getElementById('btn-gunting')
+            let batu = document.getElementById('btn-batu')
 
-        let display = document.getElementById('display-main')
+            let pemainM = document.getElementById('pemain-main')
+            let lawanM = document.getElementById('lawan-main')
 
-        let mulai = document.getElementById('mulai-main')
-        let lobby = document.getElementById('lobby-web')
-        let game = document.getElementById('BGK')
+            let ket1 = document.getElementById('ket-1')
+            let ket2 = document.getElementById('ket-2')
+            let line1 = document.getElementById('line-1')
+            let line2 = document.getElementById('line-2')
 
-        // //play game
-        // function playGame() {
-        //     lobby.classList.add('hidden')
-        //     game.classList.remove('hidden')
-        // }
+            let display = document.getElementById('display-main')
 
-        //backsound
+            let mulai = document.getElementById('mulai-main')
+            let lobby = document.getElementById('lobby-web')
+            let game = document.getElementById('BGK')
 
-        function backsound(audioname, loop) {
-            let audio = new Audio(audioname)
-            audio.loop = true
-            audio.play()
-            audio.volume = 0.7
-        }
-        backsound('BACKSOUND.mp3', true)
+            let btnBacksound = document.getElementById('btn-backsound')
+            let fx = new Audio('src/fx.mp3')
 
-        //dimulai ketika mengklik btn kertas
-        function mulaiKertas() {
-            console.log('mulai kertas')
+            // //play game
+            // function playGame() {
+            //     lobby.classList.add('hidden')
+            //     game.classList.remove('hidden')
+            // }
 
-            kertas.disabled = true
-            gunting.disabled = true
-            batu.disabled = true
+            //backsound
 
-            load()
-
-            setTimeout(() => {
-                pemain = 'KERTAS'
-                computerTurn()
-
-                ket1.style.color = '#ffffff'
-                ket2.style.color = '#ffffff'
-
-                pemainText.textContent = pemain
-                lawanText.textContent = lawan
-                pemainText.style.color = '#2DCAA7'
-
-                line1.style.backgroundColor = '#2DCAA7'
-
-                pemainM.src = 'game/KERTASM.png'
-                lawanM.src = lawanI
-                pemainM.classList.remove('hidden')
-                lawanM.classList.remove('hidden')
-
-                hasilText.textContent = cekPemenang()
-
-                kertas.disabled = false
-                gunting.disabled = false
-                batu.disabled = false
-
-            }, 4000)
-        }
-
-        //dimulai ketika mengklik btn gunting
-        function mulaiGunting() {
-            console.log('mulai gunting')
-
-            kertas.disabled = true
-            gunting.disabled = true
-            batu.disabled = true
-
-            load()
-
-            setTimeout(() => {
-                pemain = 'GUNTING'
-                computerTurn()
-                ket1.style.color = '#ffffff'
-                ket2.style.color = '#ffffff'
-
-                pemainText.textContent = pemain
-                lawanText.textContent = lawan
-                pemainText.style.color = '#FFDE59'
-
-                line1.style.backgroundColor = '#FFDE59'
-
-                pemainM.src = 'game/GUNTINGM.png'
-                lawanM.src = lawanI
-                pemainM.classList.remove('hidden')
-                lawanM.classList.remove('hidden')
-
-                hasilText.textContent = cekPemenang()
-
-                kertas.disabled = false
-                gunting.disabled = false
-                batu.disabled = false
-
-            }, 4000)
-        }
-
-        //dimulai ketika mengklik btn BATU
-        function mulaiBatu() {
-            console.log('mulai BATU')
-
-            kertas.disabled = true
-            gunting.disabled = true
-            batu.disabled = true
-
-            load()
-
-            setTimeout(() => {
-                pemain = 'BATU'
-                computerTurn()
-                ket1.style.color = '#ffffff'
-                ket2.style.color = '#ffffff'
-
-                pemainText.textContent = pemain
-                lawanText.textContent = lawan
-                pemainText.style.color = '#FF3131'
-
-                line1.style.backgroundColor = '#FF3131'
-
-                pemainM.src = 'game/BATUM.png'
-                lawanM.src = lawanI
-                pemainM.classList.remove('hidden')
-                lawanM.classList.remove('hidden')
-
-                hasilText.textContent = cekPemenang()
-
-                kertas.disabled = false
-                gunting.disabled = false
-                batu.disabled = false
-
-            }, 4000)
-        }
-
-        // cek pemenang
-        function cekPemenang() {
-            if (pemain == lawan) {
-                hasilText.style.textDecorationColor = '#FFDE59'
-                return 'Sama!!'
-            } else if (lawan == 'BATU') {
-                (pemain == 'KERTAS') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
-                    .textDecorationColor = '#FF3131'
-                return (pemain == 'KERTAS') ? 'Kamu Menang!' : 'Kamu Kalah..'
-            } else if (lawan == 'KERTAS') {
-                (pemain == 'GUNTING') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
-                    .textDecorationColor = '#FF3131'
-                return (pemain == 'GUNTING') ? 'Kamu Menang!' : 'Kamu Kalah..'
-            } else if (lawan == 'GUNTING') {
-                (pemain == 'BATU') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
-                    .textDecorationColor = '#FF3131'
-                return (pemain == 'BATU') ? 'Kamu Menang!' : 'Kamu Kalah..'
+            function backsound(audioname, loop) {
+                let audio = new Audio(audioname)
+                audio.loop = true
+                audio.play()
+                audio.volume = 0.7
+                btnBacksound.textContent = 'Have a nice day!'
+                btnBacksound.disabled = true
             }
-        }
 
-        //computer random
-        function computerTurn() {
-            console.log('mulai randomnNum')
-            const randNum = Math.floor(Math.random() * 3) + 1;
+            //dimulai ketika mengklik btn kertas
+            function mulaiKertas() {
+                console.log('mulai kertas')
 
-            switch (randNum) {
-                case 1:
-                    lawan = 'KERTAS'
-                    lawanI = 'game/KERTASL.png'
+                kertas.disabled = true
+                gunting.disabled = true
+                batu.disabled = true
+
+                load()
+
+                setTimeout(() => {
+                    pemain = 'KERTAS'
+                    computerTurn()
+
+                    fx.volume = 1.0
+                    fx.play()
+
+                    ket1.style.color = '#ffffff'
+                    ket2.style.color = '#ffffff'
+
+                    pemainText.textContent = pemain
+                    lawanText.textContent = lawan
+                    pemainText.style.color = '#2DCAA7'
+
+                    line1.style.backgroundColor = '#2DCAA7'
+
+                    pemainM.src = 'game/KERTASM.png'
+                    lawanM.src = lawanI
+                    pemainM.classList.remove('hidden')
+                    lawanM.classList.remove('hidden')
+
+                    hasilText.textContent = cekPemenang()
+
+                    kertas.disabled = false
+                    gunting.disabled = false
+                    batu.disabled = false
+
+                }, 4000)
+            }
+
+            //dimulai ketika mengklik btn gunting
+            function mulaiGunting() {
+                console.log('mulai gunting')
+
+                kertas.disabled = true
+                gunting.disabled = true
+                batu.disabled = true
+
+                load()
+
+                setTimeout(() => {
+                    pemain = 'GUNTING'
+                    computerTurn()
+
+                    fx.volume = 1.0
+                    fx.play()
+
+                    ket1.style.color = '#ffffff'
+                    ket2.style.color = '#ffffff'
+
+                    pemainText.textContent = pemain
+                    lawanText.textContent = lawan
+                    pemainText.style.color = '#FFDE59'
+
+                    line1.style.backgroundColor = '#FFDE59'
+
+                    pemainM.src = 'game/GUNTINGM.png'
+                    lawanM.src = lawanI
+                    pemainM.classList.remove('hidden')
+                    lawanM.classList.remove('hidden')
+
+                    hasilText.textContent = cekPemenang()
+
+                    kertas.disabled = false
+                    gunting.disabled = false
+                    batu.disabled = false
+
+                }, 4000)
+            }
+
+            //dimulai ketika mengklik btn BATU
+            function mulaiBatu() {
+                console.log('mulai BATU')
+
+                kertas.disabled = true
+                gunting.disabled = true
+                batu.disabled = true
+
+                load()
+
+                setTimeout(() => {
+                    pemain = 'BATU'
+                    computerTurn()
+
+                    fx.volume = 1.0
+                    fx.play()
+
+                    ket1.style.color = '#ffffff'
+                    ket2.style.color = '#ffffff'
+
+                    pemainText.textContent = pemain
+                    lawanText.textContent = lawan
+                    pemainText.style.color = '#FF3131'
+
+                    line1.style.backgroundColor = '#FF3131'
+
+                    pemainM.src = 'game/BATUM.png'
+                    lawanM.src = lawanI
+                    pemainM.classList.remove('hidden')
+                    lawanM.classList.remove('hidden')
+
+                    hasilText.textContent = cekPemenang()
+
+                    kertas.disabled = false
+                    gunting.disabled = false
+                    batu.disabled = false
+
+                }, 4000)
+            }
+
+            // cek pemenang
+            function cekPemenang() {
+                if (pemain == lawan) {
+                    hasilText.style.textDecorationColor = '#FFDE59'
+                    return 'Sama!!'
+                } else if (lawan == 'BATU') {
+                    (pemain == 'KERTAS') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
+                        .textDecorationColor = '#FF3131'
+                    return (pemain == 'KERTAS') ? 'Kamu Menang!' : 'Kamu Kalah..'
+                } else if (lawan == 'KERTAS') {
+                    (pemain == 'GUNTING') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
+                        .textDecorationColor = '#FF3131'
+                    return (pemain == 'GUNTING') ? 'Kamu Menang!' : 'Kamu Kalah..'
+                } else if (lawan == 'GUNTING') {
+                    (pemain == 'BATU') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
+                        .textDecorationColor = '#FF3131'
+                    return (pemain == 'BATU') ? 'Kamu Menang!' : 'Kamu Kalah..'
+                }
+            }
+
+            //computer random
+            function computerTurn() {
+                console.log('mulai randomnNum')
+                const randNum = Math.floor(Math.random() * 3) + 1;
+
+                switch (randNum) {
+                    case 1:
+                        lawan = 'KERTAS'
+                        lawanI = 'game/KERTASL.png'
+                        lawanText.style.color = '#2DCAA7'
+                        line2.style.backgroundColor = '#2DCAA7'
+                        break
+                    case 2:
+                        lawan = 'GUNTING'
+                        lawanI = 'game/GUNTINGL.png'
+                        lawanText.style.color = '#FFDE59'
+                        line2.style.backgroundColor = '#FFDE59'
+                        break
+                    case 3:
+                        lawan = 'BATU'
+                        lawanI = 'game/BATUL.png'
+                        lawanText.style.color = '#FF3131'
+                        line2.style.backgroundColor = '#FF3131'
+                        break
+                }
+            }
+
+            function load() {
+                setTimeout(() => {
+                    display.src = 'game/3.png'
+
+                    fx.volume = 0.5
+                    fx.play()
+
+                    pemainText.textContent = 'KERTAS'
+                    lawanText.textContent = 'KERTAS'
+                    pemainText.style.color = '#2DCAA7'
                     lawanText.style.color = '#2DCAA7'
+
+                    line1.style.backgroundColor = '#2DCAA7'
                     line2.style.backgroundColor = '#2DCAA7'
-                    break
-                case 2:
-                    lawan = 'GUNTING'
-                    lawanI = 'game/GUNTINGL.png'
+
+                    pemainM.src = 'game/KERTASM.png'
+                    lawanM.src = 'game/KERTASL.png'
+                    pemainM.classList.remove('hidden')
+                    lawanM.classList.remove('hidden')
+
+                    hasilText.textContent = ''
+                }, 0)
+
+                setTimeout(() => {
+                    display.src = 'game/2.png'
+
+                    fx.play()
+
+                    pemainText.textContent = 'GUNTING'
+                    lawanText.textContent = 'GUNTING'
+                    pemainText.style.color = '#FFDE59'
                     lawanText.style.color = '#FFDE59'
+
+                    line1.style.backgroundColor = '#FFDE59'
                     line2.style.backgroundColor = '#FFDE59'
-                    break
-                case 3:
-                    lawan = 'BATU'
-                    lawanI = 'game/BATUL.png'
+
+                    pemainM.src = 'game/GUNTINGM.png'
+                    lawanM.src = 'game/GUNTINGL.png'
+                    pemainM.classList.remove('hidden')
+                    lawanM.classList.remove('hidden')
+
+                    hasilText.textContent = ''
+                }, 1000)
+
+                setTimeout(() => {
+                    display.src = 'game/1.png'
+
+                    fx.play()
+
+                    pemainText.textContent = 'BATU'
+                    lawanText.textContent = 'BATU'
+                    pemainText.style.color = '#FF3131'
                     lawanText.style.color = '#FF3131'
+
+                    line1.style.backgroundColor = '#FF3131'
                     line2.style.backgroundColor = '#FF3131'
-                    break
+
+                    pemainM.src = 'game/BATUM.png'
+                    lawanM.src = 'game/BATUL.png'
+                    pemainM.classList.remove('hidden')
+                    lawanM.classList.remove('hidden')
+
+                    hasilText.textContent = ''
+                }, 2000)
+
+                setTimeout(() => {
+                    display.src = 'game/VS.png'
+
+                    fx.play()
+
+                    pemainText.textContent = 'PEMAIN'
+                    lawanText.textContent = 'LAWAN'
+                    pemainText.style.color = '#FFFFFF'
+                    lawanText.style.color = '#FFFFFF'
+
+                    line1.style.backgroundColor = '#FFFFFF'
+                    line2.style.backgroundColor = '#FFFFFF'
+
+                    pemainM.classList.add('hidden')
+                    lawanM.classList.add('hidden')
+
+                    hasilText.textContent = ''
+                }, 3000)
             }
-        }
-
-        function load() {
-            setTimeout(() => {
-                display.src = 'game/3.png'
-
-                pemainText.textContent = 'KERTAS'
-                lawanText.textContent = 'KERTAS'
-                pemainText.style.color = '#2DCAA7'
-                lawanText.style.color = '#2DCAA7'
-
-                line1.style.backgroundColor = '#2DCAA7'
-                line2.style.backgroundColor = '#2DCAA7'
-
-                pemainM.src = 'game/KERTASM.png'
-                lawanM.src = 'game/KERTASM.png'
-                pemainM.classList.remove('hidden')
-                lawanM.classList.remove('hidden')
-
-                hasilText.textContent = ''
-            }, 0)
-
-            setTimeout(() => {
-                display.src = 'game/2.png'
-
-                pemainText.textContent = 'GUNTING'
-                lawanText.textContent = 'GUNTING'
-                pemainText.style.color = '#FFDE59'
-                lawanText.style.color = '#FFDE59'
-
-                line1.style.backgroundColor = '#FFDE59'
-                line2.style.backgroundColor = '#FFDE59'
-
-                pemainM.src = 'game/GUNTINGM.png'
-                lawanM.src = 'game/GUNTINGM.png'
-                pemainM.classList.remove('hidden')
-                lawanM.classList.remove('hidden')
-
-                hasilText.textContent = ''
-            }, 1000)
-
-            setTimeout(() => {
-                display.src = 'game/1.png'
-
-                pemainText.textContent = 'BATU'
-                lawanText.textContent = 'BATU'
-                pemainText.style.color = '#FF3131'
-                lawanText.style.color = '#FF3131'
-
-                line1.style.backgroundColor = '#FF3131'
-                line2.style.backgroundColor = '#FF3131'
-
-                pemainM.src = 'game/BATUM.png'
-                lawanM.src = 'game/BATUM.png'
-                pemainM.classList.remove('hidden')
-                lawanM.classList.remove('hidden')
-
-                hasilText.textContent = ''
-            }, 2000)
-
-            setTimeout(() => {
-                display.src = 'game/VS.png'
-
-                pemainText.textContent = 'PEMAIN'
-                lawanText.textContent = 'LAWAN'
-                pemainText.style.color = '#FFFFFF'
-                lawanText.style.color = '#FFFFFF'
-
-                line1.style.backgroundColor = '#FFFFFF'
-                line2.style.backgroundColor = '#FFFFFF'
-
-                pemainM.classList.add('hidden')
-                lawanM.classList.add('hidden')
-
-                hasilText.textContent = ''
-            }, 3000)
-        }
-    </script>
+        </script>
 </body>
 
 </html>
