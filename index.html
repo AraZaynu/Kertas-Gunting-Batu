@@ -214,7 +214,13 @@
             let game = document.getElementById('BGK')
 
             let btnBacksound = document.getElementById('btn-backsound')
-            let fx = new Audio('src/fx.mp3')
+            let win = new Audio('src/win.mp3')
+            let lose = new Audio('src/lose.mp3')
+            let start = new Audio('src/start.mp3')
+            let draw = new Audio('src/draw.mp3')
+            win.volume = 0.7
+            lose.volume = 0.7
+            draw.volume = 0.7
 
             // //play game
             // function playGame() {
@@ -246,9 +252,6 @@
                 setTimeout(() => {
                     pemain = 'KERTAS'
                     computerTurn()
-
-                    fx.volume = 1.0
-                    fx.play()
 
                     ket1.style.color = '#ffffff'
                     ket2.style.color = '#ffffff'
@@ -287,9 +290,6 @@
                     pemain = 'GUNTING'
                     computerTurn()
 
-                    fx.volume = 1.0
-                    fx.play()
-
                     ket1.style.color = '#ffffff'
                     ket2.style.color = '#ffffff'
 
@@ -327,9 +327,6 @@
                     pemain = 'BATU'
                     computerTurn()
 
-                    fx.volume = 1.0
-                    fx.play()
-
                     ket1.style.color = '#ffffff'
                     ket2.style.color = '#ffffff'
 
@@ -356,20 +353,40 @@
             // cek pemenang
             function cekPemenang() {
                 if (pemain == lawan) {
+                    draw.play()
                     hasilText.style.textDecorationColor = '#FFDE59'
                     return 'Sama!!'
+
                 } else if (lawan == 'BATU') {
                     (pemain == 'KERTAS') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
                         .textDecorationColor = '#FF3131'
+                    if (pemain == 'KERTAS') {
+                        win.play()
+                    } else {
+                        lose.play()
+                    }
                     return (pemain == 'KERTAS') ? 'Kamu Menang!' : 'Kamu Kalah..'
+
                 } else if (lawan == 'KERTAS') {
                     (pemain == 'GUNTING') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
                         .textDecorationColor = '#FF3131'
+                    if (pemain == 'GUNTING') {
+                        win.play()
+                    } else {
+                        lose.play()
+                    }
                     return (pemain == 'GUNTING') ? 'Kamu Menang!' : 'Kamu Kalah..'
+
                 } else if (lawan == 'GUNTING') {
                     (pemain == 'BATU') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
                         .textDecorationColor = '#FF3131'
+                    if (pemain == 'BATU') {
+                        win.play()
+                    } else {
+                        lose.play()
+                    }
                     return (pemain == 'BATU') ? 'Kamu Menang!' : 'Kamu Kalah..'
+
                 }
             }
 
@@ -404,8 +421,8 @@
                 setTimeout(() => {
                     display.src = 'game/3.png'
 
-                    fx.volume = 0.5
-                    fx.play()
+                    start.volume = 0.2
+                    start.play()
 
                     pemainText.textContent = 'KERTAS'
                     lawanText.textContent = 'KERTAS'
@@ -426,8 +443,6 @@
                 setTimeout(() => {
                     display.src = 'game/2.png'
 
-                    fx.play()
-
                     pemainText.textContent = 'GUNTING'
                     lawanText.textContent = 'GUNTING'
                     pemainText.style.color = '#FFDE59'
@@ -447,8 +462,6 @@
                 setTimeout(() => {
                     display.src = 'game/1.png'
 
-                    fx.play()
-
                     pemainText.textContent = 'BATU'
                     lawanText.textContent = 'BATU'
                     pemainText.style.color = '#FF3131'
@@ -467,8 +480,6 @@
 
                 setTimeout(() => {
                     display.src = 'game/VS.png'
-
-                    fx.play()
 
                     pemainText.textContent = 'PEMAIN'
                     lawanText.textContent = 'LAWAN'
