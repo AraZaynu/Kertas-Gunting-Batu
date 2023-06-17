@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="dist/output.css" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="src/profil1.png">
+    <title>AraZaynu Game</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="navbar" class="lg:mx-auto lg:w-96 bg-graan top-0 left-0 w-full items-center z-10">
+        <div class="flex flex-wrap items-center justify-center">
+            <a href="" class="font-IBM text-2xl font-semibold text-white py-4 mx-auto">AraZaynu</a>
+            <div class=" flex space-x-4 items-center mx-auto ">
+                <!-- INSTAGRAM -->
+                <a href="https://www.instagram.com/arazaynu/" target="_blank"
+                    class="text-white hover:opacity-70 transition ease-in-out duration-200">
+                    <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path
+                            d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                    </svg>
+                </a>
+                <!-- YOUTUBE -->
+                <a href="https://www.youtube.com/@arazaynu/videos" target="_blank"
+                    class="text-white hover:opacity-70 transition ease-in-out duration-200">
+                    <svg class="fill-current" width="21" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>YouTube</title>
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+                <!-- GITHUB -->
+                <a href="https://github.com/AraZaynu" target="_blank"
+                    class="text-white hover:opacity-70 transition ease-in-out duration-200">
+                    <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>GitHub</title>
+                        <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                    </svg>
+                </a>
+                <!-- DISCORD -->
+                <a href="#" target="_blank" class="text-white hover:opacity-70 transition ease-in-out duration-200">
+                    <svg class="fill-current" width="21" role="img" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>Discord</title>
+                        <path
+                            d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- header -->
+
+    <!-- play start -->
+    <!-- <section id="lobby-web" class="">
+            <h1 class="text-center text-3xl text-graan font-BGK mt-10">
+                <marquee behavior="" direction=""> KERTAS - GUNTING - BATU</marquee>
+            </h1>
+        <div class=" mt-10 w-full justify-center px-8">
+            <div class="flex flex-wrap">
+                <h1 class=" font-IBM text-2xl font-semibold text-graan mx-auto">Hallo!, Saya <span
+                        class="underline underline-offset-2">AraZaynu</span></h1>
+
+                <p class="font-IBM mt-4 text-sm mx-auto text-premier tracking-tighter font-semibold">project dibuat
+                    sebagai
+                    Tugas Javascript, yaitu saya membuat game Kertas-Gunting-Batu. dengan keterbatasan ilmu, saya
+                    terbuka
+                    atas saran dan kritik , silahkan..</p>
+
+                <button onclick="playGame()" id="mulai-main"
+                    class="font-BGK font-2xl text-white bg-graan rounded-md px-4 py-1 mx-auto mt-8 animate-bounce hover:underline hover:animate-none hover:shadow-md hover:shadow-graan">MULAI</button>
+            </div>
+        </div>
+    </section> -->
+    <!-- play end -->
+
+    <!--game bgk start-->
+    <div id="BGK" class="lg:mx-auto lg:w-96 mt-10 ">
+        <!-- text judul game start-->
+        <h1 class="text-center text-3xl text-graan font-BGK">
+            <marquee behavior="" direction=""> KERTAS - GUNTING - BATU</marquee>
+        </h1>
+        <!-- text judul game end-->
+
+        <!-- dalam section game start-->
+        <div class="bg-premier mt-8 text-center">
+            <!-- background atas start-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="block">
+                <path fill="#ffffff" fill-opacity="1"
+                    d="M0,0L0,160L240,160L240,224L480,224L480,128L720,128L720,96L960,96L960,256L1200,256L1200,320L1440,320L1440,0L1200,0L1200,0L960,0L960,0L720,0L720,0L480,0L480,0L240,0L240,0L0,0L0,0Z">
+                </path>
+            </svg>
+            <!-- background atas end-->
+
+            <!-- display game start -->
+            <div class="flex justify-center pt-10 w-full">
+
+                <!-- pemain -->
+                <div class="w-1/3">
+                    <p id="ket-1" class="font-IBM text-xs text-premier text-start tracking-wider">Pemain</p>
+                    <p id="pemain-text" class="text-white font-BGK font-semibold tracking-widest">PEMAIN</p>
+                    <div class=" w-20 h-20 mx-auto mt-3">
+                        <img id="pemain-main" class="hidden" src="" alt="pemain">
+                    </div>
+                    <div id="line-1" class="mx-auto w-28 h-0.5 bg-white mt-4"></div>
+                </div>
+
+                <!-- vs -->
+                <div class="w-24 my-auto block"> <img id="display-main" class="w-24 h-24 mt-4" src="game/VS.png"
+                        alt="VS"></div>
+
+                <!-- lawan -->
+                <div class="w-1/3">
+                    <p id="ket-2" class="font-IBM text-xs text-premier text-start tracking-wider">Com</p>
+                    <p id="lawan-text" class="text-white font-BGK font-semibold tracking-widest">LAWAN</p>
+                    <div class=" w-20 h-20 mx-auto mt-3">
+                        <img id="lawan-main" class="hidden" src="" alt="lawan">
+                    </div>
+                    <div id="line-2" class="mx-auto w-28 h-0.5 bg-white mt-4"></div>
+                </div>
+            </div>
+            <div class="pb-4 h-12">
+                <div id="hasil-text"
+                    class="mt-10 font-IBM text-2xl text-white underline underline-offset-8 font-semibold"></div>
+            </div>
+            <!-- display game end -->
+
+            <!-- background bawah start-->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="block">
+                <path fill="#ffffff" fill-opacity="1"
+                    d="M0,160L0,256L240,256L240,224L480,224L480,288L720,288L720,256L960,256L960,128L1200,128L1200,224L1440,224L1440,320L1200,320L1200,320L960,320L960,320L720,320L720,320L480,320L480,320L240,320L240,320L0,320L0,320Z">
+                </path>
+            </svg>
+            <!-- background bawah end-->
+        </div>
+        <!-- dalam section game end-->
+
+        <!-- control pemain -->
+        <div class="text-center space-x-4 mt-12">
+            <button id="btn-kertas" onclick="mulaiKertas()"
+                class="shadow-md hover:shadow-xl hover:shadow-graan shadow-graan transition duration-100 w-24 h-24"><img
+                    class="w-24 h-24" src="game/KERTAS.png" alt="KERTAS"></button>
+            <button id="btn-gunting" onclick="mulaiGunting()"
+                class="shadow-md hover:shadow-xl hover:shadow-yel shadow-yel transition duration-100 w-24 h-24"><img
+                    class="w-24 h-24" src="game/GUNTING.png" alt="GUNTING"></button>
+            <button id="btn-batu" onclick="mulaiBatu()"
+                class="shadow-md hover:shadow-xl hover:shadow-redd shadow-redd transition duration-100 w-24 h-24"><img
+                    class="w-24 h-24" src="game/BATU.png" alt="BATU"></button>
+        </div>
+        <!-- control pemain -->
+    </div>
+    <!--game bgk end-->
+
+    <footer id="footer" class="lg:mx-auto lg:w-96 mt-20 pb-6 bg-graan">
+        <div class=" mt-10 w-full justify-center px-8">
+            <div class="flex flex-wrap">
+                <h1 class=" font-IBM text-2xl font-semibold text-graan mx-auto">Hallo!, Saya <span
+                        class="underline underline-offset-2">AraZaynu</span></h1>
+
+                <p class="font-IBM mt-4 text-sm mx-auto text-premier tracking-tighter font-semibold">project dibuat
+                    sebagai
+                    Tugas Pembelajaran Javascript, yaitu saya membuat game Kertas-Gunting-Batu ini. dengan keterbatasan
+                    ilmu, saya
+                    terbuka
+                    atas kritik dan saran, terimakasih</p>
+                <p class="font-IBM text-sm mx-auto text-premier tracking-tighter font-semibold">@arazaynu</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //variable - DOM
+        let pemain
+        let lawan
+        let hasil
+        let lawanI
+
+        let pemainText = document.getElementById('pemain-text')
+        let lawanText = document.getElementById('lawan-text')
+        let hasilText = document.getElementById('hasil-text')
+
+        let kertas = document.getElementById('btn-kertas')
+        let gunting = document.getElementById('btn-gunting')
+        let batu = document.getElementById('btn-batu')
+
+        let pemainM = document.getElementById('pemain-main')
+        let lawanM = document.getElementById('lawan-main')
+
+        let ket1 = document.getElementById('ket-1')
+        let ket2 = document.getElementById('ket-2')
+        let line1 = document.getElementById('line-1')
+        let line2 = document.getElementById('line-2')
+
+        let display = document.getElementById('display-main')
+
+        let mulai = document.getElementById('mulai-main')
+        let lobby = document.getElementById('lobby-web')
+        let game = document.getElementById('BGK')
+
+        // //play game
+        // function playGame() {
+        //     lobby.classList.add('hidden')
+        //     game.classList.remove('hidden')
+        // }
+
+        //backsound
+
+        function backsound(audioname, loop) {
+            let audio = new Audio(audioname)
+            audio.loop = true
+            audio.play()
+            audio.volume = 0.7
+        }
+        backsound('BACKSOUND.mp3', true)
+
+        //dimulai ketika mengklik btn kertas
+        function mulaiKertas() {
+            console.log('mulai kertas')
+
+            kertas.disabled = true
+            gunting.disabled = true
+            batu.disabled = true
+
+            load()
+
+            setTimeout(() => {
+                pemain = 'KERTAS'
+                computerTurn()
+
+                ket1.style.color = '#ffffff'
+                ket2.style.color = '#ffffff'
+
+                pemainText.textContent = pemain
+                lawanText.textContent = lawan
+                pemainText.style.color = '#2DCAA7'
+
+                line1.style.backgroundColor = '#2DCAA7'
+
+                pemainM.src = 'game/KERTASM.png'
+                lawanM.src = lawanI
+                pemainM.classList.remove('hidden')
+                lawanM.classList.remove('hidden')
+
+                hasilText.textContent = cekPemenang()
+
+                kertas.disabled = false
+                gunting.disabled = false
+                batu.disabled = false
+
+            }, 4000)
+        }
+
+        //dimulai ketika mengklik btn gunting
+        function mulaiGunting() {
+            console.log('mulai gunting')
+
+            kertas.disabled = true
+            gunting.disabled = true
+            batu.disabled = true
+
+            load()
+
+            setTimeout(() => {
+                pemain = 'GUNTING'
+                computerTurn()
+                ket1.style.color = '#ffffff'
+                ket2.style.color = '#ffffff'
+
+                pemainText.textContent = pemain
+                lawanText.textContent = lawan
+                pemainText.style.color = '#FFDE59'
+
+                line1.style.backgroundColor = '#FFDE59'
+
+                pemainM.src = 'game/GUNTINGM.png'
+                lawanM.src = lawanI
+                pemainM.classList.remove('hidden')
+                lawanM.classList.remove('hidden')
+
+                hasilText.textContent = cekPemenang()
+
+                kertas.disabled = false
+                gunting.disabled = false
+                batu.disabled = false
+
+            }, 4000)
+        }
+
+        //dimulai ketika mengklik btn BATU
+        function mulaiBatu() {
+            console.log('mulai BATU')
+
+            kertas.disabled = true
+            gunting.disabled = true
+            batu.disabled = true
+
+            load()
+
+            setTimeout(() => {
+                pemain = 'BATU'
+                computerTurn()
+                ket1.style.color = '#ffffff'
+                ket2.style.color = '#ffffff'
+
+                pemainText.textContent = pemain
+                lawanText.textContent = lawan
+                pemainText.style.color = '#FF3131'
+
+                line1.style.backgroundColor = '#FF3131'
+
+                pemainM.src = 'game/BATUM.png'
+                lawanM.src = lawanI
+                pemainM.classList.remove('hidden')
+                lawanM.classList.remove('hidden')
+
+                hasilText.textContent = cekPemenang()
+
+                kertas.disabled = false
+                gunting.disabled = false
+                batu.disabled = false
+
+            }, 4000)
+        }
+
+        // cek pemenang
+        function cekPemenang() {
+            if (pemain == lawan) {
+                hasilText.style.textDecorationColor = '#FFDE59'
+                return 'Sama!!'
+            } else if (lawan == 'BATU') {
+                (pemain == 'KERTAS') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
+                    .textDecorationColor = '#FF3131'
+                return (pemain == 'KERTAS') ? 'Kamu Menang!' : 'Kamu Kalah..'
+            } else if (lawan == 'KERTAS') {
+                (pemain == 'GUNTING') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
+                    .textDecorationColor = '#FF3131'
+                return (pemain == 'GUNTING') ? 'Kamu Menang!' : 'Kamu Kalah..'
+            } else if (lawan == 'GUNTING') {
+                (pemain == 'BATU') ? hasilText.style.textDecorationColor = '#2DCAA7': hasilText.style
+                    .textDecorationColor = '#FF3131'
+                return (pemain == 'BATU') ? 'Kamu Menang!' : 'Kamu Kalah..'
+            }
+        }
+
+        //computer random
+        function computerTurn() {
+            console.log('mulai randomnNum')
+            const randNum = Math.floor(Math.random() * 3) + 1;
+
+            switch (randNum) {
+                case 1:
+                    lawan = 'KERTAS'
+                    lawanI = 'game/KERTASL.png'
+                    lawanText.style.color = '#2DCAA7'
+                    line2.style.backgroundColor = '#2DCAA7'
+                    break
+                case 2:
+                    lawan = 'GUNTING'
+                    lawanI = 'game/GUNTINGL.png'
+                    lawanText.style.color = '#FFDE59'
+                    line2.style.backgroundColor = '#FFDE59'
+                    break
+                case 3:
+                    lawan = 'BATU'
+                    lawanI = 'game/BATUL.png'
+                    lawanText.style.color = '#FF3131'
+                    line2.style.backgroundColor = '#FF3131'
+                    break
+            }
+        }
+
+        function load() {
+            setTimeout(() => {
+                display.src = 'game/3.png'
+
+                pemainText.textContent = 'KERTAS'
+                lawanText.textContent = 'KERTAS'
+                pemainText.style.color = '#2DCAA7'
+                lawanText.style.color = '#2DCAA7'
+
+                line1.style.backgroundColor = '#2DCAA7'
+                line2.style.backgroundColor = '#2DCAA7'
+
+                pemainM.src = 'game/KERTASM.png'
+                lawanM.src = 'game/KERTASM.png'
+                pemainM.classList.remove('hidden')
+                lawanM.classList.remove('hidden')
+
+                hasilText.textContent = ''
+            }, 0)
+
+            setTimeout(() => {
+                display.src = 'game/2.png'
+
+                pemainText.textContent = 'GUNTING'
+                lawanText.textContent = 'GUNTING'
+                pemainText.style.color = '#FFDE59'
+                lawanText.style.color = '#FFDE59'
+
+                line1.style.backgroundColor = '#FFDE59'
+                line2.style.backgroundColor = '#FFDE59'
+
+                pemainM.src = 'game/GUNTINGM.png'
+                lawanM.src = 'game/GUNTINGM.png'
+                pemainM.classList.remove('hidden')
+                lawanM.classList.remove('hidden')
+
+                hasilText.textContent = ''
+            }, 1000)
+
+            setTimeout(() => {
+                display.src = 'game/1.png'
+
+                pemainText.textContent = 'BATU'
+                lawanText.textContent = 'BATU'
+                pemainText.style.color = '#FF3131'
+                lawanText.style.color = '#FF3131'
+
+                line1.style.backgroundColor = '#FF3131'
+                line2.style.backgroundColor = '#FF3131'
+
+                pemainM.src = 'game/BATUM.png'
+                lawanM.src = 'game/BATUM.png'
+                pemainM.classList.remove('hidden')
+                lawanM.classList.remove('hidden')
+
+                hasilText.textContent = ''
+            }, 2000)
+
+            setTimeout(() => {
+                display.src = 'game/VS.png'
+
+                pemainText.textContent = 'PEMAIN'
+                lawanText.textContent = 'LAWAN'
+                pemainText.style.color = '#FFFFFF'
+                lawanText.style.color = '#FFFFFF'
+
+                line1.style.backgroundColor = '#FFFFFF'
+                line2.style.backgroundColor = '#FFFFFF'
+
+                pemainM.classList.add('hidden')
+                lawanM.classList.add('hidden')
+
+                hasilText.textContent = ''
+            }, 3000)
+        }
+    </script>
+</body>
+
+</html>
